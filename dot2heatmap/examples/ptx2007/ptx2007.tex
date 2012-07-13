@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[x11names, rgb]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{snakes,arrows,shapes}
+\usepackage{amsmath}
+%
+%
+
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0pt}%
+
+%
+
+\begin{document}
+\pagestyle{empty}
+%
+%
+%
+
+\enlargethispage{100cm}
+% Start of code
+\begin{tikzpicture}[>=latex',line join=bevel,]
+%%
+\node (ATPlowPE1) at (357bp,198bp) [draw,fill=gray,rectangle] {$ATPlowPE1$};
+  \node (PTXE*) at (37bp,198bp) [draw,fill=gray,rectangle] {$PTXE*$};
+  \node (ATPlowPE2) at (316bp,288bp) [draw,fill=gray,rectangle] {$ATPlowPE2$};
+  \node (PTXPE) at (92bp,288bp) [draw,fill=gray,rectangle] {$PTXPE$};
+  \node (ATPhighE1) at (164bp,468bp) [draw,fill=gray,rectangle] {$ATPhighE1$};
+  \node (PTXATPlowE*) at (214bp,18bp) [draw,fill=gray,rectangle] {$PTXATPlowE*$};
+  \node (PE2) at (199bp,378bp) [draw,fill=gray,rectangle] {$PE2$};
+  \node (ATPlowE2) at (377bp,378bp) [draw,fill=gray,rectangle] {$ATPlowE2$};
+  \node (PTXATPhighE) at (77bp,378bp) [draw,fill=gray,rectangle] {$PTXATPhighE$};
+  \node (PTXATPlowPE) at (214bp,108bp) [draw,fill=gray,rectangle] {$PTXATPlowPE$};
+  \node (E1) at (258bp,558bp) [draw,fill=gray,rectangle] {$E1$};
+  \node (PTXE) at (27bp,468bp) [draw,fill=gray,rectangle] {$PTXE$};
+  \node (E2) at (258bp,468bp) [draw,fill=gray,rectangle] {$E2$};
+  \draw [black,<->,line width=1pt] (PTXATPlowPE) ..controls (214bp,68.907bp) and (214bp,56.832bp)  .. node[fill=white!10,inner sep=1pt] {$[P]^{i}$} (PTXATPlowE*);
+  \draw [black,<->,line width=1pt] (E1) ..controls (258bp,518.91bp) and (258bp,506.83bp)  .. node[fill=white!10,inner sep=1pt] {$$} (E2);
+  \draw [black,<->,line width=1pt] (ATPlowPE2) ..controls (333.64bp,249.27bp) and (339.46bp,236.49bp)  .. node[fill=white!10,inner sep=1pt] {$$} (ATPlowPE1);
+  \draw [black,<->,line width=1pt] (PE2) ..controls (172.03bp,342.47bp) and (162.7bp,332.15bp)  .. (153bp,324bp) .. controls (146.65bp,318.66bp) and (139.4bp,313.63bp)  .. node[fill=white!10,inner sep=1pt] {$[PTX]^{o}$} (PTXPE);
+  \draw [black,<->,line width=1pt] (ATPlowPE1) ..controls (298.6bp,161.24bp) and (272.53bp,144.84bp)  .. node[fill=white!10,inner sep=1pt] {$[PTX]^{o}$} (PTXATPlowPE);
+  \draw [black,<->,line width=1pt] (PE2) ..controls (240.83bp,351.07bp) and (247.19bp,346.51bp)  .. (253bp,342bp) .. controls (262.44bp,334.66bp) and (263.97bp,331.84bp)  .. (273bp,324bp) .. controls (277.23bp,320.33bp) and (281.73bp,316.49bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (ATPlowPE2);
+  \draw [black,<->,line width=1pt] (ATPlowE2) ..controls (360.14bp,341.87bp) and (354.78bp,332.26bp)  .. (349bp,324bp) .. controls (346.6bp,320.56bp) and (343.89bp,317.1bp)  .. node[fill=white!10,inner sep=1pt] {$[P]^{i}$} (ATPlowPE2);
+  \draw [black,<->,line width=1pt] (PTXPE) ..controls (46.777bp,263.96bp) and (41.532bp,258.46bp)  .. (38bp,252bp) .. controls (33.776bp,244.28bp) and (32.515bp,234.96bp)  .. node[fill=white!10,inner sep=1pt] {$[P]^{i}$} (PTXE*);
+  \draw [black,<->,line width=1pt] (ATPlowE2) ..controls (375.54bp,414.8bp) and (373.62bp,424.05bp)  .. (370bp,432bp) .. controls (351.4bp,472.79bp) and (314.97bp,509.87bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (E1);
+  \draw [black,<->,line width=1pt] (PTXATPlowE*) ..controls (346.89bp,46.069bp) and (440bp,73.303bp)  .. (440bp,108bp) .. controls (440bp,288bp) and (440bp,288bp)  .. (440bp,288bp) .. controls (440bp,314.09bp) and (432.16bp,320.77bp)  .. (417bp,342bp) .. controls (414.36bp,345.69bp) and (411.29bp,349.28bp)  .. node[fill=white!10,inner sep=1pt] {$[PTX]^{o}$} (ATPlowE2);
+  \draw [black,<->,line width=1pt] (ATPlowPE1) ..controls (439.97bp,240.05bp) and (484bp,267.63bp)  .. (484bp,288bp) .. controls (484bp,468bp) and (484bp,468bp)  .. (484bp,468bp) .. controls (484bp,508.11bp) and (359.61bp,538.24bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i} + [P]^{i}$} (E1);
+  \draw [black,<->,line width=1pt] (PTXATPhighE) ..controls (75.759bp,341.41bp) and (76.367bp,332.28bp)  .. (78bp,324bp) .. controls (78.529bp,321.32bp) and (79.245bp,318.58bp)  .. node[fill=white!10,inner sep=1pt] {$[ADP]^{i}$} (PTXPE);
+  \draw [black,<->,line width=1pt] (E1) ..controls (207.41bp,541.94bp) and (192.38bp,533.72bp)  .. (182bp,522bp) .. controls (175.57bp,514.75bp) and (171.43bp,505.12bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (ATPhighE1);
+  \draw [black,<->,line width=1pt] (ATPlowPE2) ..controls (252.98bp,252.31bp) and (233.89bp,236.05bp)  .. (223bp,216bp) .. controls (209.67bp,191.45bp) and (208.77bp,159.05bp)  .. node[fill=white!10,inner sep=1pt] {$[PTX]^{o}$} (PTXATPlowPE);
+  \draw [black,<->,line width=1pt] (PTXE) ..controls (36.733bp,431.35bp) and (40.378bp,421.99bp)  .. (45bp,414bp) .. controls (46.912bp,410.69bp) and (49.161bp,407.42bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (PTXATPhighE);
+  \draw [black,<->,line width=1pt] (PTXPE) ..controls (106.11bp,237.33bp) and (117.87bp,204.75bp)  .. (135bp,180bp) .. controls (147.5bp,161.94bp) and (165.33bp,145.19bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (PTXATPlowPE);
+  \draw [black,<->,line width=1pt] (PTXE*) ..controls (46.197bp,146.12bp) and (56.206bp,112.65bp)  .. (76bp,90bp) .. controls (95.322bp,67.891bp) and (123.1bp,51.579bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (PTXATPlowE*);
+  \draw [black,<->,line width=1pt] (E1) ..controls (185bp,551.79bp) and (131.08bp,543.02bp)  .. (89bp,522bp) .. controls (74.819bp,514.92bp) and (61.275bp,503.82bp)  .. node[fill=white!10,inner sep=1pt] {$[PTX]^{o}$} (PTXE);
+  \draw [black,<->,line width=1pt] (E2) ..controls (226.25bp,439.12bp) and (223.42bp,435.6bp)  .. (221bp,432bp) .. controls (215.62bp,424.01bp) and (211.19bp,414.5bp)  .. node[fill=white!10,inner sep=1pt] {$[P]^{i}$} (PE2);
+  \draw [black,<->,line width=1pt] (ATPhighE1) ..controls (121.36bp,433.87bp) and (116.85bp,423.71bp)  .. (123bp,414bp) .. controls (131.77bp,400.14bp) and (147.49bp,391.51bp)  .. node[fill=white!10,inner sep=1pt] {$[ADP]^{i}$} (PE2);
+  \draw [black,<->,line width=1pt] (E2) ..controls (280.3bp,431.85bp) and (288.63bp,421.59bp)  .. (298bp,414bp) .. controls (305.91bp,407.6bp) and (315.14bp,402.07bp)  .. node[fill=white!10,inner sep=1pt] {$[ATP]^{i}$} (ATPlowE2);
+  \draw [black,<->,line width=1pt] (PTXE) ..controls (17.382bp,426.64bp) and (14.407bp,410.6bp)  .. (13bp,396bp) .. controls (7.1584bp,335.35bp) and (20.685bp,264.53bp)  .. node[fill=white!10,inner sep=1pt] {$$} (PTXE*);
+%
+\end{tikzpicture}
+% End of code
+
+%
+\end{document}
+%
+
+
+
