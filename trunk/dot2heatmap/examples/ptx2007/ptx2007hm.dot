@@ -1,0 +1,49 @@
+strict digraph G {
+	node [shape=box,style=filled];
+	edge [dir="both",lblstyle="fill=white!10,inner sep=1pt", style="line width=1pt", color=black];
+
+	// albers-post
+	// states
+    "E1"        [hmname="@e1",color="#0000ff"]; //,fillcolor=red		
+	"E2"        [hmname="@e2",color="#0000ff"];
+	"ATPlowE2"  [hmname="@atplowe2",color="#0000ff"];
+	"ATPlowPE2" [hmname="@atplowpe2",color="#cc0033"];
+	"PE2"       [hmname="@pe2",color="#cc0033"];	
+	"ATPhighE1" [hmname="@atphighe1",color="#3300cc"];
+	"ATPlowPE1" [hmname="@atplowpe1",color="#0000ff"];	
+	
+	// reactions
+	"E1" -> "ATPhighE1"        [label="[ATP]^{i}",hmname="@r1",style="line width=5pt",color="#0000ff"]; // ,style="line width=5pt",color="#9ACEEB
+    "ATPhighE1" -> "PE2"       [label="[ADP]^{i}",hmname="@r2",style="line width=5pt",color="null"]
+	"E2" -> "PE2"              [label="[P]^{i}",hmname="@r3",style="line width=5pt",color="#3300cc"]
+    "PE2" -> "ATPlowPE2"       [label="[ATP]^{i}",hmname="@r4",style="line width=5pt",color="#3300cc"]
+	"ATPlowE2" -> "ATPlowPE2"  [label="[P]^{i}",hmname="@r5",style="line width=5pt",color="#0000ff"]
+    "E2" -> "ATPlowE2"         [label="[ATP]^{i}",hmname="@r6",style="line width=5pt",color="#0000ff"]
+    "ATPlowE2" -> "E1"         [label="[ATP]^{i}",hmname="@r7",style="line width=5pt",color="#cc0033"]
+    "E1" -> "E2"               [hmname="@r8",style="line width=5pt",color="#3300cc"]
+	"ATPlowPE2" -> "ATPlowPE1" [hmname="@r9",style="line width=5pt",color="#3300cc"];	
+	"ATPlowPE1" -> "E1"        [label="[ATP]^{i} + [P]^{i}",hmname="@r10",style="line width=5pt",color="#0000ff"]
+
+	// ptx
+	// states
+	"PTXE"        [hmname="@ptxe",color="#0000ff"];
+	"PTXATPhighE" [hmname="@ptxatphighe",color="#0000ff"];
+	"PTXPE"       [hmname="@ptxpe",color="#3300cc"];	
+	"PTXE*"       [hmname="@ptxe*",color="#0000ff"];
+	"PTXATPlowE*" [hmname="@ptxatplowe*",color="#0000ff"];		
+	"PTXATPlowPE" [hmname="@ptxatplowpe",color="#3300cc"];	
+	
+	// reactions
+	"E1" -> "PTXE"	               [label="[PTX]^{o}",hmname="@rp1",style="line width=5pt",color="#0000ff"]
+	"PTXE" -> "PTXATPhighE"        [label="[ATP]^{i}",hmname="@rp2",style="line width=5pt",color="#0000ff"];
+	"PTXATPhighE" -> "PTXPE"       [label="[ADP]^{i}",hmname="@rp3",style="line width=5pt",color="#0000ff"];
+	"PTXPE" -> "PTXE*"             [label="[P]^{i}",hmname="@rp4",style="line width=5pt",color="#0000ff"];	
+	"PTXPE" -> "PTXATPlowPE"       [label="[ATP]^{i}",hmname="@rp5",style="line width=5pt",color="#0000ff"];		
+	"PE2" -> "PTXPE"               [label="[PTX]^{o}",hmname="@rp6",style="line width=5pt",color="#0000ff"];	
+	"ATPlowPE2" -> "PTXATPlowPE"   [label="[PTX]^{o}",hmname="@rp7",style="line width=5pt",color="#0000ff"];		
+	"PTXE*" -> "PTXATPlowE*"       [label="[ATP]^{i}",hmname="@rp8",style="line width=5pt",color="#0000ff"];	
+	"PTXATPlowPE" -> "PTXATPlowE*" [label="[P]^{i}",hmname="@rp9",style="line width=5pt",color="#0000ff"];	
+	"PTXE" -> "PTXE*"              [hmname="@rp10",style="line width=5pt",color="#0000ff"];
+	"PTXATPlowE*" -> "ATPlowE2"    [label="[PTX]^{o}",hmname="@rp11",style="line width=5pt",color="#0000ff"];			
+	"ATPlowPE1" -> "PTXATPlowPE"   [label="[PTX]^{o}",hmname="@rp12",style="line width=5pt",color="#0000ff"]
+}

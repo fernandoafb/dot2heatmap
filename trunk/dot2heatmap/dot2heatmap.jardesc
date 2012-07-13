@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jardesc>
+    <jar path="dot2heatmap/dot2heatmap.jar"/>
+    <options buildIfNeeded="true" compress="true" descriptionLocation="/dot2heatmap/dot2heatmap.jardesc" exportErrors="true" exportWarnings="true" includeDirectoryEntries="false" overwrite="true" saveDescription="true" storeRefactorings="false" useSourceFolders="false"/>
+    <storedRefactorings deprecationInfo="true" structuralOnly="false"/>
+    <selectedProjects/>
+    <manifest generateManifest="true" mainClassHandleIdentifier="=dot2heatmap/src&lt;com.fbraz.dot2heatmap.src{Dot2Heatmap.java[Dot2Heatmap" manifestLocation="" manifestVersion="1.0" reuseManifest="false" saveManifest="false" usesManifest="true">
+        <sealing sealJar="true">
+            <packagesToSeal/>
+            <packagesToUnSeal/>
+        </sealing>
+    </manifest>
+    <selectedElements exportClassFiles="true" exportJavaFiles="false" exportOutputFolder="false">
+        <file path="/dot2heatmap/.project"/>
+        <file path="/dot2heatmap/.classpath"/>
+        <javaElement handleIdentifier="=dot2heatmap/src"/>
+    </selectedElements>
+</jardesc>

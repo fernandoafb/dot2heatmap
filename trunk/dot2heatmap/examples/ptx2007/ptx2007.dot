@@ -1,0 +1,49 @@
+strict digraph G {
+	node [shape=box,style=filled];
+	edge [dir="both",lblstyle="fill=white!10,inner sep=1pt", style="line width=1pt", color=black];
+
+	// albers-post
+	// states
+    "E1"        [hmname="@e1"]; //,fillcolor=red		
+	"E2"        [hmname="@e2"];
+	"ATPlowE2"  [hmname="@atplowe2"];
+	"ATPlowPE2" [hmname="@atplowpe2"];
+	"PE2"       [hmname="@pe2"];	
+	"ATPhighE1" [hmname="@atphighe1"];
+	"ATPlowPE1" [hmname="@atplowpe1"];	
+	
+	// reactions
+	"E1" -> "ATPhighE1"        [label="[ATP]^{i}",hmname="@r1"]; // ,style="line width=5pt",color="#9ACEEB"
+    "ATPhighE1" -> "PE2"       [label="[ADP]^{i}",hmname="@r2"];
+	"E2" -> "PE2"              [label="[P]^{i}",hmname="@r3"];
+    "PE2" -> "ATPlowPE2"       [label="[ATP]^{i}",hmname="@r4"];
+	"ATPlowE2" -> "ATPlowPE2"  [label="[P]^{i}",hmname="@r5"];
+    "E2" -> "ATPlowE2"         [label="[ATP]^{i}",hmname="@r6"];
+    "ATPlowE2" -> "E1"         [label="[ATP]^{i}",hmname="@r7"];
+    "E1" -> "E2"               [hmname="@r8"];
+	"ATPlowPE2" -> "ATPlowPE1" [hmname="@r9"];		
+	"ATPlowPE1" -> "E1"        [label="[ATP]^{i} + [P]^{i}",hmname="@r10"];
+
+	// ptx
+	// states
+	"PTXE"        [hmname="@ptxe"];
+	"PTXATPhighE" [hmname="@ptxatphighe"];
+	"PTXPE"       [hmname="@ptxpe"];	
+	"PTXE*"       [hmname="@ptxe*"];
+	"PTXATPlowE*" [hmname="@ptxatplowe*"];		
+	"PTXATPlowPE" [hmname="@ptxatplowpe"];	
+	
+	// reactions
+	"E1" -> "PTXE"	               [label="[PTX]^{o}",hmname="@rp1"];
+	"PTXE" -> "PTXATPhighE"        [label="[ATP]^{i}",hmname="@rp2"];	
+	"PTXATPhighE" -> "PTXPE"       [label="[ADP]^{i}",hmname="@rp3"];	
+	"PTXPE" -> "PTXE*"             [label="[P]^{i}",hmname="@rp4"];		
+	"PTXPE" -> "PTXATPlowPE"       [label="[ATP]^{i}",hmname="@rp5"];			
+	"PE2" -> "PTXPE"               [label="[PTX]^{o}",hmname="@rp6"];		
+	"ATPlowPE2" -> "PTXATPlowPE"   [label="[PTX]^{o}",hmname="@rp7"];			
+	"PTXE*" -> "PTXATPlowE*"       [label="[ATP]^{i}",hmname="@rp8"];		
+	"PTXATPlowPE" -> "PTXATPlowE*" [label="[P]^{i}",hmname="@rp9"];		
+	"PTXE" -> "PTXE*"              [hmname="@rp10"];	
+	"PTXATPlowE*" -> "ATPlowE2"    [label="[PTX]^{o}",hmname="@rp11"];				
+	"ATPlowPE1" -> "PTXATPlowPE"   [label="[PTX]^{o}",hmname="@rp12"];
+}
